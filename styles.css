@@ -1,11 +1,4 @@
-:root {
- 
-    --primary-hover: #1d4ed8;          
-    --bg-color: #f8fafc;                                    
-       
-  }
-  
-  *{
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
