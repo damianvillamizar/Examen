@@ -1,0 +1,491 @@
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: black;
+  padding: 20px 20px;
+}
+.servicios-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.servicios-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+}
+
+.badge-subtitulo {
+  display:flex;
+  background-color: #e0e7ff;
+  color: black;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.titulo-seccion {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.descripcion-seccion {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+
+@media (min-width: 768px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.card-servicio {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition-fast);
+}
+
+/* EFECTO HOVER DE LAS TARJETAS */
+.card-servicio:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+/* Estilo destacado para la tarjeta principal (Motos/Carros) */
+.card-servicio.destacado {
+  border: 2px solid var(--accent-color);
+}
+
+.card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #f1f5f9;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.card-badge.badge-destacado {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+/* Ícono Ilustrativo */
+.card-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background-color: #eff6ff;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: var(--transition-fast);
+}
+
+.card-servicio:hover .card-icon-wrapper {
+  background-color: var(--primary-color);
+}
+
+.card-servicio:hover .card-icon {
+  filter: brightness(0) invert(1); /* Cambia el icono SVG a blanco al pasar el mouse */
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  transition: var(--transition-fast);
+}
+
+/* Contenido de la Tarjeta */
+.card-titulo {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.card-descripcion {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Lista de Beneficios */
+.card-beneficios {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.card-beneficios li {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 22px;
+}
+
+.card-beneficios li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Footer de la tarjeta con Precios y Botón */
+.card-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.card-precio {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.card-precio .monto {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.card-precio .periodo {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+/* Botón de Acción */
+.btn-servicio {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.btn-servicio:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-servicio.btn-destacado {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
+}
+
+.btn-servicio.btn-destacado:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+   :root {
+
+    --primary-color: #1e3a8a;      /* Azul Oscuro Elegante */
+    --primary-hover: #1d4ed8;      /* Azul Intermedio */
+    --accent-color: #2563eb;       /* Azul Brillante Accento */
+    --bg-color: #f8fafc;           /* Gris Claro de Fondo */
+    --card-bg: #ffffff;            /* Blanco Puro */
+    --text-main: #0f172a;          /* Gris Muy Oscuro para Texto */
+    --text-muted: #64748b;         /* Gris Medio para Detalles */
+    --border-color: #e2e8f0;       /* Gris Suave para Bordes */
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 20px 25px -5px rgba(30, 58, 138, 0.12), 0 10px 10px -5px rgba(30, 58, 138, 0.04);
+  
+
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --radius-lg: 16px;
+    --radius-md: 8px;
+    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .servicios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .servicios-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+  }
+  
+  .badge-subtitulo {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+  }
+  
+  .titulo-seccion {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  
+  .descripcion-seccion {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+  }
+  
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
+  }
+  
+ 
+  @media (min-width: 768px) {
+    .servicios-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  
+  @media (min-width: 1024px) {
+    .servicios-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .card-servicio {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-fast);
+  }
+  
+ 
+  .card-servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(37, 99, 235, 0.3);
+  }
+  
+
+  .card-servicio.destacado {
+    border: 2px solid var(--accent-color);
+  }
+  
+  .card-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #f1f5f9;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  
+  .card-badge.badge-destacado {
+    background-color: var(--accent-color);
+    color: #ffffff;
+  }
+
+  .card-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: #eff6ff;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: var(--transition-fast);
+  }
+  
+  .card-servicio:hover .card-icon-wrapper {
+    background-color: var(--primary-color);
+  }
+  
+  .card-servicio:hover .card-icon {
+    filter: brightness(0) invert(1); 
+  }
+  
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    transition: var(--transition-fast);
+  }
+  
+
+  .card-titulo {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+  }
+  
+  .card-descripcion {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  
+
+  .card-beneficios {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+  
+  .card-beneficios li {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 22px;
+  }
+  
+  .card-beneficios li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+  
+
+  .card-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+  }
+  
+  .card-precio {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 16px;
+  }
+  
+  .card-precio .monto {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+  
+  .card-precio .periodo {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-left: 6px;
+  }
+  
+
+  .btn-servicio {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+  
+  .btn-servicio:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+  
+  .btn-servicio.btn-destacado {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #ffffff;
+  }
+  
+  .btn-servicio.btn-destacado:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
